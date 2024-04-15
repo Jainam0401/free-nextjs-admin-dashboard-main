@@ -61,9 +61,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-[#06064d] duration-300 ease-linear dark:bg-boxdark lg:static  lg:translate-x-0 lg:hover:w-72.5 ${
-        sidebarOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
+      className={`hover:absolute hidden md:block left-0 top-0 z-9999 h-screen w-[50px] flex-col overflow-y-hidden bg-[#06064d] 
+      duration-500 ease-linear lg:translate-x-0 lg:hover:w-72.5 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
@@ -119,7 +118,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       {/* home starts */}
                       <Link
                         href="#"
-                        className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium text-black text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 `}
+                        className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium  text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 `}
                         onClick={(e) => {
                           e.preventDefault();
                           sidebarExpanded
@@ -146,13 +145,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* dashboard start  */}
               <li>
                 <Link
-                  href="#"
-                  className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium text-black text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 ${
+                  href="/Dashboard"
+                  className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium  text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 ${
                     (pathname === "/" || pathname.includes("dashboard")) &&
                     " dark:bg-meta-4"
                   }`}
                   onClick={(e) => {
-                    e.preventDefault();
+                   
                     sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                   }}
                 >
@@ -172,7 +171,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <Link
                   href="/orders"
-                  className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium text-black text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 ${
+                  className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium  text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 ${
                     (pathname === "/" || pathname.includes("dashboard")) &&
                     " dark:bg-meta-4"
                   }`}
@@ -196,13 +195,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* returns starts */}
               <li>
                 <Link
-                  href="#"
-                  className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium text-black text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 ${
+                  href="/RateCalculator"
+                  className={`group relative flex items-center gap-2.5  rounded-md px-4 py-2 font-medium  text-white duration-300 ease-in-out hover:bg-white hover:text-black dark:hover:bg-slate-900 ${
                     (pathname === "/" || pathname.includes("dashboard")) &&
                     " dark:bg-meta-4"
                   }`}
                   onClick={(e) => {
-                    e.preventDefault();
+                    // e.preventDefault();
                     sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                   }}
                 >
@@ -213,7 +212,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     alt="Logo"
                     priority
                   />
-                  Returns
+                  Rate Calculator
                 </Link>
               </li>
               <li>
