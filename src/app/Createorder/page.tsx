@@ -67,7 +67,7 @@ function page() {
   };
 
   return (
-    <DefaultLayout>
+    
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="bg-white p-2 rounded-lg px-4">
@@ -596,7 +596,7 @@ function page() {
         </div>
       </form>
     </div>
-    </DefaultLayout>
+    
   );
 }
 
